@@ -1,3 +1,4 @@
+<!-- Version: 1.0.0 -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,179 +13,195 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            'saira': ['Saira Extra Condensed', 'sans-serif'],
+                            'muli': ['Muli', 'sans-serif']
+                        }
+                    }
+                }
+            }
+        </script>
     </head>
-    <body id="page-top">
+    <body class="bg-[#ecf4f7] font-muli">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">James Edgell</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." /></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
+        <nav class="bg-[#191970] text-[#f8f8ff] p-4 lg:fixed lg:w-64 lg:h-screen lg:flex lg:flex-col lg:justify-center font-saira" id="sideNav">
+            <div class="flex justify-between items-center lg:flex-col">
+                <a class="flex items-center space-x-2" href="#page-top">
+                    <img class="h-10 w-10 rounded-full" src="assets/img/logo.png" alt="Logo" />
+                    <span class="text-xl font-bold uppercase">James Edgell</span>
+                </a>
+                <button class="lg:hidden" id="nav-toggle">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden lg:block lg:flex lg:flex-col lg:items-center lg:mt-8" id="nav-menu">
+                <img class="h-32 w-32 rounded-full mx-auto mb-4 border-4 border-[#40e0d0]" src="assets/img/profile.jpg" alt="Profile Picture" />
+                <ul class="lg:flex-col lg:space-y-2 text-center">
+                    <li><a class="block py-2 px-4 uppercase font-bold hover:bg-[#008080] rounded" href="#about">About</a></li>
+                    <li><a class="block py-2 px-4 uppercase font-bold hover:bg-[#008080] rounded" href="#experience">Experience</a></li>
+                    <li><a class="block py-2 px-4 uppercase font-bold hover:bg-[#008080] rounded" href="#education">Education</a></li>
+                    <li><a class="block py-2 px-4 uppercase font-bold hover:bg-[#008080] rounded" href="#skills">Skills</a></li>
+                    <li><a class="block py-2 px-4 uppercase font-bold hover:bg-[#008080] rounded" href="#interests">Interests</a></li>
+                    <li><a class="block py-2 px-4 uppercase font-bold hover:bg-[#008080] rounded" href="#awards">Awards</a></li>
                 </ul>
             </div>
         </nav>
+
         <!-- Page Content-->
-        <div class="container-fluid p-0">
+        <div class="lg:ml-64">
             <!-- About-->
-            <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                    <h1 class="mb-0">
+            <section class="min-h-screen flex items-center p-8" id="about">
+                <div class="w-full">
+                    <h1 class="text-6xl font-bold text-[#191970] font-saira uppercase">
                         James
-                        <span class="text-primary">Edgell</span>
+                        <span class="text-[#008080]">Edgell</span>
                     </h1>
-                    <div class="subheading mb-5">
+                    <div class="text-2xl mt-4 text-[#4f5d75]">
                         Oxford, UK ·
-                        <a href="mailto:jamesedgell74@gmail.com">jamesedgell74@gmail.com</a>
+                        <a href="mailto:jamesedgell74@gmail.com" class="text-[#008080] hover:underline">jamesedgell74@gmail.com</a>
                     </div>
-                    <p class="lead mb-5">AI and Marketing Science Expert | Applied Data Scientist | Technical Lead</p>
-                    <p class="mb-3">I bring 7+ years experience as a data professional across the travel (airlines) and hospitality (hotels) industries driving digital transformation.
-                        My expertise lies in:</p>
-                    <ul class="mb-3">
-                        <li>Building NLP systems and deploying scalable AI solutions</li>
-                        <li>Developing data-driven marketing strategies and customer loyalty programs</li>
-                        <li>Leading end-to-end analytics lifecycles, from ideation to production</li>
+                    <p class="mt-6 text-lg text-[#4f5d75]">AI and Marketing Science Expert | Applied Data Scientist | Technical Lead</p>
+                    <ul class="mt-4 space-y-2 text-lg text-[#4f5d75]">
+                        <li><span class="text-[#20b2aa] mr-2">✓</span>Building NLP systems and deploying scalable AI solutions</li>
+                        <li><span class="text-[#20b2aa] mr-2">✓</span>Developing data-driven marketing strategies and customer loyalty programs</li>
+                        <li><span class="text-[#20b2aa] mr-2">✓</span>Leading end-to-end analytics lifecycles, from ideation to production</li>
                     </ul>
-                    <p class="mb-0">I excel at executing on customer-centric business strategies, driving multi-million pound ROI through hands-on development of innovative AI/ML applications.</p>
-                    <div class="mb-5"></div>
-                    <div class="social-icons">
-                        <a class="social-icon" href="https://www.linkedin.com/in/jamesedgell/"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="https://github.com/jimmyedgell"><i class="fab fa-github"></i></a>
-                        <a class="social-icon" href="https://twitter.com/jimmyedgell"><i class="fab fa-twitter"></i></a>
+                    <p class="mt-6 text-lg text-[#4f5d75]">I excel at executing on customer-centric business strategies, driving multi-million pound ROI through hands-on development of innovative AI/ML applications.</p>
+                    <div class="mt-8 flex space-x-4">
+                        <a href="https://www.linkedin.com/in/jamesedgell/" class="bg-[#4f5d75] text-white h-14 w-14 rounded-full flex items-center justify-center hover:bg-[#ff4b44]">
+                            <i class="fab fa-linkedin-in fa-2x"></i>
+                        </a>
+                        <a href="https://github.com/jimmyedgell" class="bg-[#4f5d75] text-white h-14 w-14 rounded-full flex items-center justify-center hover:bg-[#ff4b44]">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
+                        <a href="https://twitter.com/jimmyedgell" class="bg-[#4f5d75] text-white h-14 w-14 rounded-full flex items-center justify-center hover:bg-[#ff4b44]">
+                            <i class="fab fa-twitter fa-2x"></i>
+                        </a>
                     </div>
                 </div>
             </section>
-            <hr class="m-0" />
+            <hr class="border-t border-[#9ca3af]" />
             <!-- Experience-->
-            <section class="resume-section" id="experience">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Experience</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Lead Data Scientist</h3>
-                            <div class="subheading mb-3">Whitbread plc, London, UK</div>
-                            <p>• Spearheaded NLP system for customer contact triage, boosting productivity by 50% (£100k/year savings)</p>
-                            <p>• Pioneered MLOps framework, accelerating ML model deployment across the organization</p>
-                            <p>• Architected customer loyalty strategy, securing C-suite buy-in for multi-million pound initiatives</p>
-                            <p>• Deployed customer segmentation system using Azure Databricks, driving £74M/year ROI</p>
+            <section class="min-h-screen p-8" id="experience">
+                <div class="w-full">
+                    <h2 class="text-4xl font-bold text-[#800020] mb-8">Experience</h2>
+                    <div class="mb-8">
+                        <div class="flex flex-col md:flex-row justify-between">
+                            <div class="flex-grow">
+                                <h3 class="text-2xl font-bold text-[#191970]">Lead Data Scientist</h3>
+                                <div class="text-xl text-[#4f5d75] mb-2">Whitbread plc, London, UK</div>
+                                <ul class="list-disc list-inside text-[#4f5d75]">
+                                    <li>Spearheaded NLP system for customer contact triage, boosting productivity by 50% (£100k/year savings)</li>
+                                    <li>Pioneered MLOps framework, accelerating ML model deployment across the organization</li>
+                                    <li>Architected customer loyalty strategy, securing C-suite buy-in for multi-million pound initiatives</li>
+                                    <li>Deployed customer segmentation system using Azure Databricks, driving £74M/year ROI</li>
+                                </ul>
+                            </div>
+                            <div class="flex-shrink-0 mt-2 md:mt-0 text-lg text-[#008080] font-semibold">May 2021 - February 2023; June 2024 - Present</div>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">May 2021 - February 2023; June 2024 - Present</span></div>
                     </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Lead Data Scientist</h3>
-                            <div class="subheading mb-3">WestJet Airlines Ltd, Vancouver, Canada</div>
-                            <p>• Developed first holistic member-level profitability model for loyalty program transformation</p>
-                            <p>• Led LLM-based self-serve analytics POC, shaping enterprise data strategy</p>
-                            <p>• Built explainable ML models for targeted marketing, achieving 90% uplift in acquisitions</p>
+                    <div>
+                        <div class="flex flex-col md:flex-row justify-between">
+                            <div class="flex-grow">
+                                <h3 class="text-2xl font-bold text-[#191970]">Lead Data Scientist</h3>
+                                <div class="text-xl text-[#4f5d75] mb-2">WestJet Airlines Ltd, Vancouver, Canada</div>
+                                <ul class="list-disc list-inside text-[#4f5d75]">
+                                    <li>Developed first holistic member-level profitability model for loyalty program transformation</li>
+                                    <li>Led LLM-based self-serve analytics POC, shaping enterprise data strategy</li>
+                                    <li>Built explainable ML models for targeted marketing, achieving 90% uplift in acquisitions</li>
+                                </ul>
+                            </div>
+                            <div class="flex-shrink-0 mt-2 md:mt-0 text-lg text-[#008080] font-semibold">February 2023 - May 2024</div>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">February 2023 - May 2024</span></div>
                     </div>
                 </div>
             </section>
-            <hr class="m-0" />
+            <hr class="border-t border-[#9ca3af]" />
             <!-- Education-->
-            <section class="resume-section" id="education">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Education</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">University of Warwick, UK</h3>
-                            <div class="subheading mb-3">BSc (Hons) Physics</div>
-                            <p>First Class Honours (4.0 GPA equivalent)</p>
-                            <p>Awarded prize for 'Excellence in the BSc Final Year Project' by the Department of Physics</p>
+            <section class="min-h-screen p-8" id="education">
+                <div class="w-full">
+                    <h2 class="text-4xl font-bold text-[#800020] mb-8">Education</h2>
+                    <div class="mb-8">
+                        <div class="flex flex-col md:flex-row justify-between">
+                            <div class="flex-grow">
+                                <h3 class="text-2xl font-bold text-[#191970]">University of Warwick, UK</h3>
+                                <div class="text-xl text-[#4f5d75] mb-2">BSc (Hons) Physics</div>
+                                <p class="text-[#4f5d75]">First Class Honours (4.0 GPA equivalent)</p>
+                                <p class="text-[#4f5d75]">Awarded prize for 'Excellence in the BSc Final Year Project' by the Department of Physics</p>
+                            </div>
+                            <div class="flex-shrink-0 mt-2 md:mt-0 text-lg text-[#008080] font-semibold">October 2010 - June 2014</div>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">October 2010 - June 2014</span></div>
                     </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">University of Leeds, UK</h3>
-                            <div class="subheading mb-3">MSc. Geophysics</div>
-                            <p>Merit (3.7 GPA equivalent)</p>
+                    <div>
+                        <div class="flex flex-col md:flex-row justify-between">
+                            <div class="flex-grow">
+                                <h3 class="text-2xl font-bold text-[#191970]">University of Leeds, UK</h3>
+                                <div class="text-xl text-[#4f5d75] mb-2">MSc. Geophysics</div>
+                                <p class="text-[#4f5d75]">Merit (3.7 GPA equivalent)</p>
+                            </div>
+                            <div class="flex-shrink-0 mt-2 md:mt-0 text-lg text-[#008080] font-semibold">September 2014 - September 2015</div>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">September 2014 - September 2015</span></div>
                     </div>
                 </div>
             </section>
-            <hr class="m-0" />
+            <hr class="border-t border-[#9ca3af]" />
             <!-- Skills-->
-            <section class="resume-section" id="skills">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Skills</h2>
-                    <div class="subheading mb-3">Programming Languages & Tools</div>
-                    <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="fab fa-python"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-git"></i></li>
-                        <li class="list-inline-item"><i class="fas fa-database"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-linux"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-microsoft"></i></li>
-                        <li class="list-inline-item"><i class="fas fa-terminal"></i></li>
-                    </ul>
-                    <div class="subheading mb-3">Expertise</div>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Machine Learning & AI (scikit-learn, PyTorch, PySpark, langchain)
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Data Science & Analytics (Python, SQL, Tableau, Power BI)
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Natural Language Processing (spaCy, NLTK, Hugging Face)
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            MLOps & Software Engineering Practices (Terraform, Docker, CI/CD)
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Marketing Science (Customer Strategy, Segmentation, Personalisation, Recommendation Systems, Channel Attribution)
-                        </li>
-                    </ul>
+            <section class="min-h-screen p-8" id="skills">
+                <div class="w-full">
+                    <h2 class="text-4xl font-bold text-[#800020] mb-8">Skills</h2>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-[#191970] mb-4">Programming Languages & Tools</h3>
+                        <div class="flex flex-wrap gap-4 text-4xl text-[#4f5d75]">
+                            <i class="fab fa-python"></i>
+                            <i class="fab fa-git"></i>
+                            <i class="fas fa-database"></i>
+                            <i class="fab fa-linux"></i>
+                            <i class="fab fa-microsoft"></i>
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-[#191970] mb-4">Expertise</h3>
+                        <ul class="space-y-2 text-lg text-[#4f5d75]">
+                            <li><span class="text-[#20b2aa] mr-2">✓</span>Machine Learning & AI (scikit-learn, PyTorch, PySpark, langchain)</li>
+                            <li><span class="text-[#20b2aa] mr-2">✓</span>Data Science & Analytics (Python, SQL, Tableau, Power BI)</li>
+                            <li><span class="text-[#20b2aa] mr-2">✓</span>Natural Language Processing (spaCy, NLTK, Hugging Face)</li>
+                            <li><span class="text-[#20b2aa] mr-2">✓</span>MLOps & Software Engineering Practices (Terraform, Docker, CI/CD)</li>
+                            <li><span class="text-[#20b2aa] mr-2">✓</span>Marketing Science (Customer Strategy, Segmentation, Personalisation, Recommendation Systems, Channel Attribution)</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
-            <hr class="m-0" />
+            <hr class="border-t border-[#9ca3af]" />
             <!-- Interests-->
-            <section class="resume-section" id="interests">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Interests</h2>
-                    <p>Outside of my professional life, I'm an avid outdoor enthusiast. I enjoy snowboarding and hiking, as well as lifting weights and practicing yoga to maintain physical and mental well-being.</p>
-                    <p class="mb-0">I'm passionate about continuous learning, particularly in the fields of AI, physics, and neuroscience. I enjoy discovering new music, playing guitar riffs, and staying informed about developments in technology and UK politics.</p>
-                    <p class="mb-0">AI safety and governance is an area of interest to me, and I aim to contribute to responsible AI development and policy-making in the future.</p>
+            <section class="min-h-screen p-8" id="interests">
+                <div class="w-full">
+                    <h2 class="text-4xl font-bold text-[#800020] mb-8">Interests</h2>
+                    <p class="text-lg text-[#4f5d75] mb-4">Outside of my professional life, I'm an avid outdoor enthusiast. I enjoy snowboarding and hiking, as well as lifting weights and practicing yoga to maintain physical and mental well-being.</p>
+                    <p class="text-lg text-[#4f5d75] mb-4">I'm passionate about continuous learning, particularly in the fields of AI, physics, and neuroscience. I enjoy discovering new music, playing guitar riffs, and staying informed about developments in technology and UK politics.</p>
+                    <p class="text-lg text-[#4f5d75]">AI safety and governance is an area of interest to me, and I aim to contribute to responsible AI development and policy-making in the future.</p>
                 </div>
             </section>
-            <hr class="m-0" />
+            <hr class="border-t border-[#9ca3af]" />
             <!-- Awards-->
-            <section class="resume-section" id="awards">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Awards & Certifications</h2>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Azure Data Scientist Associate (DP-100)
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Awarded prize for 'Excellence in the BSc Final Year Project' by the Department of Physics, University of Warwick
-                        </li>
+            <section class="p-8" id="awards">
+                <div class="w-full">
+                    <h2 class="text-4xl font-bold text-[#800020] mb-8">Awards & Certifications</h2>
+                    <ul class="space-y-2 text-lg text-[#4f5d75]">
+                        <li><i class="fas fa-trophy text-[#ff4b44] mr-2"></i>Azure Data Scientist Associate (DP-100)</li>
+                        <li><i class="fas fa-trophy text-[#ff4b44] mr-2"></i>Awarded prize for 'Excellence in the BSc Final Year Project' by the Department of Physics, University of Warwick</li>
                     </ul>
                 </div>
             </section>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
