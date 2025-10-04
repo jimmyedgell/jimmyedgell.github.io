@@ -4,10 +4,11 @@ This is my personal website, hosted on GitHub Pages.
 
 ## Technologies Used
 - HTML
-- CSS
-- Bootstrap
+- Tailwind CSS
 - JavaScript
 - Font Awesome
 
-## Credits
-- Bootstrap: https://startbootstrap.com/
+## Version History
+| Version | Date       | Author | Change comment                               |
+|---------|------------|--------|----------------------------------------------|
+| 1.0.0   | 2025-10-04 | Jules  | Revamped website with new color scheme and Tailwind CSS. |
